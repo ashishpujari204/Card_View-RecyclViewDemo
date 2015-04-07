@@ -13,7 +13,7 @@ import java.util.List;
 
 public class RecyclerViewActivity extends Activity {
 
-    private List<Person> persons;
+    private List<PersonClass> persons;
     private RecyclerView rv;
     Context context;
     @Override
@@ -23,6 +23,7 @@ public class RecyclerViewActivity extends Activity {
         setContentView(R.layout.recyclerview_activity);
 
         context=RecyclerViewActivity.this;
+
         rv=(RecyclerView)findViewById(R.id.rv);
 
         rv.addOnItemTouchListener(
@@ -44,24 +45,22 @@ public class RecyclerViewActivity extends Activity {
 
     private void initializeData(){
         persons = new ArrayList<>();
-        persons.add(new Person("Ashish Pujari", "24 years old", R.drawable.ic_launcher));
-        persons.add(new Person("Sachin Wagh", "23 years old", R.drawable.ic_launcher));
-        persons.add(new Person("Yo Yo", "35 years old", R.drawable.ic_launcher));
-        persons.add(new Person("Saurbha", "24 years old", R.drawable.ic_launcher));
-        persons.add(new Person("Yuraj", "23 years old", R.drawable.ic_launcher));
-        persons.add(new Person("Ms", "35 years old", R.drawable.ic_launcher));
-        persons.add(new Person("Shakshi", "24 years old", R.drawable.ic_launcher));
-        persons.add(new Person("Suresh", "23 years old", R.drawable.ic_launcher));
-        persons.add(new Person("Ashwin", "35 years old", R.drawable.ic_launcher));
-        persons.add(new Person("John", "24 years old", R.drawable.ic_launcher));
-        persons.add(new Person("Sachin Wagh", "23 years old", R.drawable.ic_launcher));
-        persons.add(new Person("df", "35 years old", R.drawable.ic_launcher));
 
+        persons.add(new PersonClass("A", "35 years old", R.drawable.ic_launcher));
+        persons.add(new PersonClass("B", "24 years old", R.drawable.ic_launcher));
+        persons.add(new PersonClass("C", "23 years old", R.drawable.ic_launcher));
+        persons.add(new PersonClass("D", "35 years old", R.drawable.ic_launcher));
+        persons.add(new PersonClass("S", "24 years old", R.drawable.ic_launcher));
+        persons.add(new PersonClass("a", "23 years old", R.drawable.ic_launcher));
+        persons.add(new PersonClass("G", "35 years old", R.drawable.ic_launcher));
+        persons.add(new PersonClass("E", "24 years old", R.drawable.ic_launcher));
+        persons.add(new PersonClass("QW", "23 years old", R.drawable.ic_launcher));
+        persons.add(new PersonClass("df", "35 years old", R.drawable.ic_launcher));
 
     }
 
     private void initializeAdapter(){
-        RVAdapter adapter = new RVAdapter(persons);
+        MyAdapter adapter = new MyAdapter(persons);
         rv.setAdapter(adapter);
     }
 }
